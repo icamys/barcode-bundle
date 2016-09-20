@@ -1,7 +1,7 @@
 # SGKBarcodeBundle
 
 [![Build Status](https://travis-ci.org/shangguokan/SGKBarcodeBundle.svg)](https://travis-ci.org/shangguokan/SGKBarcodeBundle)
-[![Latest Stable Version](https://poser.pugx.org/sgk/barcode-bundle/v/stable)](https://packagist.org/packages/sgk/barcode-bundle) [![Total Downloads](https://poser.pugx.org/sgk/barcode-bundle/downloads)](https://packagist.org/packages/sgk/barcode-bundle) [![Latest Unstable Version](https://poser.pugx.org/sgk/barcode-bundle/v/unstable)](https://packagist.org/packages/sgk/barcode-bundle) [![License](https://poser.pugx.org/sgk/barcode-bundle/license)](https://packagist.org/packages/sgk/barcode-bundle)
+[![Latest Stable Version](https://poser.pugx.org/icamys/barcode-bundle/v/stable)](https://packagist.org/packages/icamys/barcode-bundle) [![Total Downloads](https://poser.pugx.org/icamys/barcode-bundle/downloads)](https://packagist.org/packages/icamys/barcode-bundle) [![Latest Unstable Version](https://poser.pugx.org/icamys/barcode-bundle/v/unstable)](https://packagist.org/packages/icamys/barcode-bundle) [![License](https://poser.pugx.org/icamys/barcode-bundle/license)](https://packagist.org/packages/icamys/barcode-bundle)
 
 SGKBarcodeBundle 是一个用于生成条形码和二维码的 Symfony2 / Symfony3 Bundle。
 这份 README 还有英语版（[English](https://github.com/shangguokan/SGKBarcodeBundle)）和法语版（[Français](README_fr.md)）。
@@ -20,7 +20,7 @@ SGKBarcodeBundle 是一个用于生成条形码和二维码的 Symfony2 / Symfon
 执行这条指令来安装 SGKBarcodeBundle：
 ```sh
 // Symfony version >= 3.0
-$ php composer.phar require sgk/barcode-bundle:~3.0
+$ php composer.phar require icamys/barcode-bundle:~3.0
 
 // Symfony version >= 2.7 and < 3.0, use ~2.0
 // Symfony version < 2.7, use ~1.0
@@ -30,14 +30,14 @@ $ php composer.phar require sgk/barcode-bundle:~3.0
 ```json
 // Symfony version >= 3.0
 "require": {
-        "sgk/barcode-bundle": "~3.0"
+        "icamys/barcode-bundle": "~3.0"
     }
 
 // Symfony version >= 2.7 and < 3.0, use ~2.0
 // Symfony version < 2.7, use ~1.0
 ```
 
-Composer 会把 Bundle 安装到你项目下的 vendor/sgk 文件夹中。
+Composer 会把 Bundle 安装到你项目下的 vendor/icamys 文件夹中。
 
 然后在 kernel 中注册这个 Bundle ：
 ```php
@@ -71,7 +71,7 @@ public function registerBundles()
 
 ## 用例：通过 service 使用
 
-这个 Bundle 注册了一个 service ： ``sgk_barcode.generator`` ，你可以通过 Symfony 的服务容器来获得它并生成条码：
+这个 Bundle 注册了一个 service ： ``icamys_barcode.generator`` ，你可以通过 Symfony 的服务容器来获得它并生成条码：
 
 * 输出 html
 ```php
@@ -82,7 +82,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('sgk_barcode.generator')->generate($options);
+    $this->get('icamys_barcode.generator')->generate($options);
     
 return new Response($barcode);
 ```
@@ -99,7 +99,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('sgk_barcode.generator')->generate($options);
+    $this->get('icamys_barcode.generator')->generate($options);
     
 return new Response($barcode);
 ```
@@ -116,7 +116,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('sgk_barcode.generator')->generate($options);
+    $this->get('icamys_barcode.generator')->generate($options);
 
 return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```

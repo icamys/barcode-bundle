@@ -1,7 +1,7 @@
 # SGKBarcodeBundle
 
 [![Build Status](https://travis-ci.org/shangguokan/SGKBarcodeBundle.svg)](https://travis-ci.org/shangguokan/SGKBarcodeBundle)
-[![Latest Stable Version](https://poser.pugx.org/sgk/barcode-bundle/v/stable)](https://packagist.org/packages/sgk/barcode-bundle) [![Total Downloads](https://poser.pugx.org/sgk/barcode-bundle/downloads)](https://packagist.org/packages/sgk/barcode-bundle) [![Latest Unstable Version](https://poser.pugx.org/sgk/barcode-bundle/v/unstable)](https://packagist.org/packages/sgk/barcode-bundle) [![License](https://poser.pugx.org/sgk/barcode-bundle/license)](https://packagist.org/packages/sgk/barcode-bundle)
+[![Latest Stable Version](https://poser.pugx.org/icamys/barcode-bundle/v/stable)](https://packagist.org/packages/icamys/barcode-bundle) [![Total Downloads](https://poser.pugx.org/icamys/barcode-bundle/downloads)](https://packagist.org/packages/icamys/barcode-bundle) [![Latest Unstable Version](https://poser.pugx.org/icamys/barcode-bundle/v/unstable)](https://packagist.org/packages/icamys/barcode-bundle) [![License](https://poser.pugx.org/icamys/barcode-bundle/license)](https://packagist.org/packages/icamys/barcode-bundle)
 
 SGKBarcodeBundle est un Symfony2 / Symfony3 Bundle pour l’objet de générer tous les types de code-barres !
 Ce document README ont aussi une version Anglaise ([English]( https://github.com/shangguokan/SGKBarcodeBundle)) et une version Chinoise ([中文]( README_zh-CN.md)).
@@ -20,7 +20,7 @@ Caractéristiques:
 Ajoutez SGKBarcodeBundle via exécuter le command:
 ```sh
 // Symfony version >= 3.0
-$ php composer.phar require sgk/barcode-bundle:~3.0
+$ php composer.phar require icamys/barcode-bundle:~3.0
 
 // Symfony version >= 2.7 and < 3.0, use ~2.0
 // Symfony version < 2.7, use ~1.0
@@ -30,14 +30,14 @@ Ou ajoutez la dépendance de  SGKBarcodeBundle à votre fichier ``composer.json`
 ```json
 // Symfony version >= 3.0
 "require": {
-        "sgk/barcode-bundle": "~3.0"
+        "icamys/barcode-bundle": "~3.0"
     }
 
 // Symfony version >= 2.7 and < 3.0, use ~2.0
 // Symfony version < 2.7, use ~1.0
 ```
 
-Composer téléchargera automatiquement tous les fichiers requis, et les installera pour vous sous le répertoire vendor/sgk.
+Composer téléchargera automatiquement tous les fichiers requis, et les installera pour vous sous le répertoire vendor/icamys.
 
 Ensuite, comme pour tout autre bundle, incluez dans votre classe Kernel: 
 ```php
@@ -71,7 +71,7 @@ Vous avez 5 paramètres (options) à choisir pour la génération d’un code-ba
 
 ## Utilisation par service
   
-Ce bundle crée un service ``sgk_barcode.generator``  dans le Conteneur, cela vous permettez de l’utiliser pour générer le code-barres d’une façon très simple.
+Ce bundle crée un service ``icamys_barcode.generator``  dans le Conteneur, cela vous permettez de l’utiliser pour générer le code-barres d’une façon très simple.
 
 * outpout html
 ```php
@@ -82,7 +82,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('sgk_barcode.generator')->generate($options);
+    $this->get('icamys_barcode.generator')->generate($options);
     
 return new Response($barcode);
 ```
@@ -99,7 +99,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('sgk_barcode.generator')->generate($options);
+    $this->get('icamys_barcode.generator')->generate($options);
     
 return new Response($barcode);
 ```
@@ -116,7 +116,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('sgk_barcode.generator')->generate($options);
+    $this->get('icamys_barcode.generator')->generate($options);
 
 return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```
